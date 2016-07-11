@@ -68,7 +68,7 @@ prompt.get('loca', function(err, answers) {
                         var longIss = Number(JSON.parse(body).iss_position.longitude);
 
                         var dist = calculaDistance(lat1, latIss, long1, longIss);
-                        console.log(dist);
+                        console.log("The distance to ISS is : " + dist);
                     }
                 });
  //               console.log(latIss);
