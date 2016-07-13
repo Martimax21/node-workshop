@@ -18,7 +18,30 @@ request(url, function(err, response,body) {
         console.log('there was an error');
     }
     else {
-        console.log(JSON.parse(body).iss_position.latitude.toFixed(2));
-        console.log(JSON.parse(body).iss_position.longitude.toFixed(2));
+        try {
+            var data = JSON.parse(body);
+            console.log("The iss is at lat = " + data.iss_position.latitude.toFixed(2));
+            console.log(data.iss_position.longitude.toFixed(2));
+        }
+        catch(e){
+            console.log("There as an error")
+        }
     }
 });
+
+function getISS(err, response,body) {
+    if (err) {
+        console.log('there was an error');
+    }
+    else {
+        try {
+            var data = JSON.parse(body);
+            console.log("The iss is at lat = " + data.iss_position.latitude.toFixed(2));
+            console.log(data.iss_position.longitude.toFixed(2));
+        }
+        catch(e){
+            console.log("There as an error")
+        }
+    }
+}
+
